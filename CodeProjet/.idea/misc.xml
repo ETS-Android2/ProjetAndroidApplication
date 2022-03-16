@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/difficulty_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/home_appbar.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/home_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/launch_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/launch_game_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/newgame_edit_text.xml" value="0.2703125" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/pressed_difficulty_btn.xml" value="0.2703125" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/pressed_launch_game_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/selector_difficulty.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_new_game.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_scores.xml" value="0.25416666666666665" />
