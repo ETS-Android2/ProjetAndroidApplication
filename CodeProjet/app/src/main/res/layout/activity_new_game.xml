@@ -96,7 +96,8 @@
                     android:text="Facile"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:background="@drawable/selector_difficulty_btn"/>
+                    android:background="@drawable/selector_difficulty_btn"
+                    android:id="@+id/easy"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -106,7 +107,8 @@
                     android:text="Moyen"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:background="@drawable/selector_difficulty_btn"/>
+                    android:background="@drawable/selector_difficulty_btn"
+                    android:id="@+id/medium"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -116,7 +118,8 @@
                     android:text="Difficile"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:background="@drawable/selector_difficulty_btn"/>
+                    android:background="@drawable/selector_difficulty_btn"
+                    android:id="@+id/hard"/>
 
             </LinearLayout>
 
@@ -149,7 +152,7 @@
                 android:text="GO"
                 android:textSize="24sp"
                 android:layout_margin="20dp"
-                android:background="@drawable/unpressed_launch_game_btn"/>
+                android:background="@drawable/selector_launch_game_btn"/>
 
             <Space
                 android:layout_width="wrap_content"
