@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#e9ecef">
 
         <Space
             android:layout_width="match_parent"
@@ -19,12 +20,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
             android:orientation="horizontal">
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -35,26 +37,29 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="Nom de la partie :"
-                    android:textStyle="bold"
                     android:textSize="24sp"
-                    android:gravity="center"/>
+                    android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/gameName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Never Gonna Give up"
-                    android:textSize="24sp"
-                    android:textStyle="italic"
+                    android:layout_margin="10dp"
                     android:background="@drawable/newgame_edit_text"
-                    android:layout_margin="10dp"/>
+                    android:hint="Never Gonna Give up"
+                    android:maxLength="16"
+                    android:singleLine="true"
+                    android:textSize="24sp"
+                    android:textStyle="italic" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
         </LinearLayout>
 
@@ -83,7 +88,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Diffilcuté :"
+                    android:text="Difficulté :"
                     android:textStyle="bold"
                     android:textSize="24sp"
                     android:gravity="center"/>
@@ -152,7 +157,8 @@
                 android:text="GO"
                 android:textSize="24sp"
                 android:layout_margin="20dp"
-                android:background="@drawable/selector_launch_game_btn"/>
+                android:background="@drawable/selector_launch_game_btn"
+                android:id="@+id/launch"/>
 
             <Space
                 android:layout_width="wrap_content"
