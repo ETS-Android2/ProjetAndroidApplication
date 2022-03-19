@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".NewGameActivity">
 
+    <include layout="@layout/new_game_toolbar"
+        android:id="@+id/toolbar"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +18,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"/>
+            android:layout_weight="3"/>
 
         <LinearLayout
             android:layout_width="match_parent"

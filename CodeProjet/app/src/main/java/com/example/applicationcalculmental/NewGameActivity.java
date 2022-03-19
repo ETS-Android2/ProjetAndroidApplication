@@ -12,15 +12,18 @@ import android.support.v7.widget.AlertDialogLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewGameActivity extends AppCompatActivity {
 
+    private android.support.v7.widget.Toolbar toolbar;
     private EditText gameName;
     private Button easy, medium, hard, go;
 
@@ -30,9 +33,11 @@ public class NewGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_new_game);
 
-        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffb703")));
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         gameName = (EditText) findViewById(R.id.gameName);
 
@@ -102,7 +107,8 @@ public class NewGameActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-                Toast.makeText(this, "Home", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Home", Toast.LENGTH_LONG).show();
+                openHomeActivity(item);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -144,5 +150,9 @@ public class NewGameActivity extends AppCompatActivity {
         intent.putExtras(bundle);
 
         startActivity(intent);
+    }
+
+    public void openHomeActivity(MenuItem item) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
