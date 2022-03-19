@@ -1,4 +1,4 @@
-package com.example.applicationcalculmental;
+package com.example.applicationcalculmental.BDD;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
