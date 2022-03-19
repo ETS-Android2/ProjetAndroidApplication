@@ -25,3 +25,5 @@ public class GameActivity extends AppCompatActivity {
         System.out.println(chosenDifficulty);
     }
 }
+
+

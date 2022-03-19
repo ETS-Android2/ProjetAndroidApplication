@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style
+        name="style_name"
+        parent="@[package:]style/style_to_inherit">
+        <item
+            name="[package:]style_property_name"
+            >style_value</item>
+    </style>
+</resources>
