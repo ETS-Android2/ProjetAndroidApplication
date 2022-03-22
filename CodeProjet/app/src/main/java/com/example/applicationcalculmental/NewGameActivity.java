@@ -29,6 +29,7 @@ public class NewGameActivity extends AppCompatActivity {
 
     private int chosenDifficulty = 0;
     private String chosenGameName;
+    private int chosenNbCalcul = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
