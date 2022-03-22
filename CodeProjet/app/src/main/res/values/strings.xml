@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">ApplicationCalculMental</string>
-    <string name="accueil">Accueil</string>
-    <string name="recommencer">Recommencer</string>
-    <string name="score">Score</string>
-    <string name="todo">TODO</string>
-    <string name="partie_termin_e">Partie Terminée !</string>
-    <string name="message_valeur_trop_grande"> Valeur trop grande</string>
-    <string name="message_division_par_zero">Attention division par 0</string>
+    <string name="title_activity_new_game">NewGameActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="home">Accueil</string>
+    <string name="developpedBy">Développé par Maël Rhuin et Baptiste Risse A2 G4</string>
+    <string name="scores">Scores</string>
+    <string name="newgame">Nouvelle Partie</string>
+    <string name="message_valeur_trop_grande">Valeur trop grande</string>
     <string name="message_valeur_trop_petite">Valeur trop petite</string>
 </resources>

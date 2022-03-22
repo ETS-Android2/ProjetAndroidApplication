@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/drawable/pressed_home_btn.xml" value="0.1285" />
         <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_calcul.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_end.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_end2.xml" value="0.109375" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_game.xml" value="0.2" />
         <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_new_game.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_partie.xml" value="0.176" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/activity_scores.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/game_toolbar.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/home_activity.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/layout/new_game_toolbar.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/menu/game_menu.xml" value="0.25" />
+        <entry key="..\:/Users/bapti/AndroidStudioProjects/Projet_Android/ProjetAndroidApplication/CodeProjet/app/src/main/res/menu/new_game_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
