@@ -53,6 +53,15 @@ public class Helper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public int nbScoresOnBDD() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT COUNT(_id) FROM scores", null);
+
+        cursor.moveToFirst();
+        return cursor.getInt(0);
+    }
+
     public Cursor getAllScores() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -69,7 +78,7 @@ public class Helper extends SQLiteOpenHelper {
         cursor.moveToFirst();
 
         String strDate = cursor.getString(4);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
 
         Date date = sdf.parse(strDate);
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
