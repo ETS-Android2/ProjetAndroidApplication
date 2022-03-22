@@ -13,4 +13,13 @@
     <string name="developpedBy">Développé par Maël Rhuin et Baptiste Risse A2 G4</string>
     <string name="scores">Scores</string>
     <string name="newgame">Nouvelle Partie</string>
+    <string name="message_valeur_trop_grande">valeur trop grande</string>
+    <string name="message_valeur_trop_petite">valeur trop petite</string>
+    
+    <string-array name="nbCalculGame">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
 </resources>

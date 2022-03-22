@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".NewGameActivity">
 
-    <include layout="@layout/new_game_toolbar"
-        android:id="@+id/toolbar"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#e9ecef">
+
+        <include layout="@layout/new_game_toolbar"
+            android:id="@+id/toolbar"/>
 
         <Space
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/newgame_edit_text"
-                    android:hint="Never Gonna Give up"
+                    android:hint="Never Gonna Give You Up"
                     android:maxLength="16"
                     android:singleLine="true"
                     android:textSize="24sp"
@@ -138,16 +138,12 @@
 
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="horizontal"
-            android:layout_weight="2">
+            android:layout_weight="1">
 
             <Space
                 android:layout_width="wrap_content"
@@ -157,15 +153,24 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.AppCompatAutoCompleteTextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:text="Nombre de manche pour cette Partie"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_margin="10dp" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/nbCalculGame"
                     android:layout_gravity="center"
-                    android:text="Nombre de manche"/>
+                    android:id="@+id/nbCalculGameSpinner"/>
 
             </LinearLayout>
 

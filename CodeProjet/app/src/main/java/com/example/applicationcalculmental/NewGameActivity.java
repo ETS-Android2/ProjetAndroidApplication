@@ -13,12 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class NewGameActivity extends AppCompatActivity {
@@ -26,6 +29,7 @@ public class NewGameActivity extends AppCompatActivity {
     private android.support.v7.widget.Toolbar toolbar;
     private EditText gameName;
     private Button easy, medium, hard, go;
+    private Spinner nbGameSpinner;
 
     private int chosenDifficulty = 0;
     private String chosenGameName;
@@ -79,6 +83,8 @@ public class NewGameActivity extends AppCompatActivity {
             }
         });
 
+        nbGameSpinner = (Spinner) findViewById(R.id.nbCalculGameSpinner);
+
         go = (Button) findViewById(R.id.launch);
 
         go.setOnClickListener(new View.OnClickListener() {
@@ -88,8 +94,7 @@ public class NewGameActivity extends AppCompatActivity {
                 chosenGameName = verificationChosenGameName(gameName);
                 chosenDifficulty = verificationChosenDifficulty(chosenDifficulty);
 
-                System.out.println("Nom de la partie : " + chosenGameName);
-                System.out.println("Difficulte choisie : " + chosenDifficulty);
+                chosenNbCalcul = Integer.parseInt(nbGameSpinner.getSelectedItem().toString());
 
                 if(chosenDifficulty > 0 && chosenGameName.length() > 0) {
                     switchToGameActivity(view);
@@ -147,6 +152,7 @@ public class NewGameActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("chosenGameName", chosenGameName);
         bundle.putInt("chosenDifficulty", chosenDifficulty);
+        bundle.putInt("chosenNbCalcul", chosenNbCalcul);
 
         intent.putExtras(bundle);
 
