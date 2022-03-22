@@ -49,7 +49,7 @@
             android:id="@+id/buttonEffacer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:background="@color/yellow"
             android:text="Effacer" />
 
         <LinearLayout
@@ -62,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="1" />
 
             <Button
@@ -70,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="2" />
 
             <Button
@@ -78,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="3" />
         </LinearLayout>
 
@@ -91,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="4" />
 
             <Button
@@ -99,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="5" />
 
             <Button
@@ -107,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="6" />
         </LinearLayout>
 
@@ -120,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="7" />
 
             <Button
@@ -128,6 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="8" />
 
             <Button
@@ -136,6 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="9" />
         </LinearLayout>
 
@@ -149,6 +158,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_margin="3dp"
+                android:background="@color/yellow"
                 android:text="(-)" />
 
             <Button
@@ -157,6 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@color/yellow"
                 android:text="0" />
 
             <Button
@@ -164,6 +176,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_margin="3dp"
+                android:background="@color/yellow"
                 android:text="Valider" />
 
         </LinearLayout>

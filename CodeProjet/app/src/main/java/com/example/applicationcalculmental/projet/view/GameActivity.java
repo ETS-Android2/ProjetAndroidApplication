@@ -21,6 +21,19 @@ public class GameActivity extends AppCompatActivity {
     private TextView textViewCalcul, textViewResultat, textViewScore;
     private Long BORNE_SUPERIEUR = 9999L;
     private Long BORNE_INFERIEUR = -9999L;
+<<<<<<< Updated upstream:CodeProjet/app/src/main/java/com/example/applicationcalculmental/projet/view/GameActivity.java
+=======
+    private int chosenDifficulty;
+    private String chosenDifficultyString;
+    private String chosenGameName;
+    private int chosenNbCalcul = 5;
+    private android.support.v7.widget.Toolbar toolbar;
+    private boolean negatif = false;
+    private Long resultat;
+    private int compteur = 1;
+    private boolean validiteValider = false;
+    private double score;
+>>>>>>> Stashed changes:CodeProjet/app/src/main/java/com/example/applicationcalculmental/GameActivity.java
 
 
     @Override
@@ -54,10 +67,85 @@ public class GameActivity extends AppCompatActivity {
         Button boutonMoins = findViewById(R.id.buttonMoins);
         boutonMoins.setOnClickListener(view -> nombreNegatif());
         Button boutonValider = findViewById(R.id.buttonValider);
+<<<<<<< Updated upstream:CodeProjet/app/src/main/java/com/example/applicationcalculmental/projet/view/GameActivity.java
         boutonValider.setOnClickListener(view -> verifCalcul(resultat));
+=======
+
+        boutonValider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (compteur < 5 && nbVies > 0){
+                    if(!validiteValider){
+                        verifCalcul();
+                        boutonValider.setText("Suivant");
+                        validiteValider = true;
+                    }else{
+                        videTextViewResultat();
+                        textViewResultat.setTextColor(Color.DKGRAY);
+                        resultat = calcul(chosenDifficulty);
+                        compteur++;
+                        boutonValider.setText("Valider");
+                        validiteValider = false;
+                    }
+                }else{
+                    verifCalcul();
+                    switchToEndActivity();
+                }
+            }
+        });
+>>>>>>> Stashed changes:CodeProjet/app/src/main/java/com/example/applicationcalculmental/GameActivity.java
         Button boutonEffacer = findViewById(R.id.buttonEffacer);
         boutonEffacer.setOnClickListener(view -> videTextViewResultat());
 
+<<<<<<< Updated upstream:CodeProjet/app/src/main/java/com/example/applicationcalculmental/projet/view/GameActivity.java
+=======
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.game_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                openHomeActivity(item);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void switchToEndActivity() {
+        Intent intent = new Intent(this, EndActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putDouble("score", Point * 100 / chosenNbCalcul);
+
+        intent.putExtras(bundle);
+
+        startActivity(intent);
+
+        /*
+        Bundle bundle = new Bundle();
+        bundle.putString("chosenName", chosenGameName);
+
+        switch(chosenDifficulty){
+            case 1:
+                chosenDifficultyString = "facile";
+                break;
+            case 2:
+                chosenDifficultyString = "moyen";
+                break;
+            case 3:
+                chosenDifficultyString = "difficile";
+                break;
+        }
+
+        bundle.putString("chosenDifficulty", chosenDifficultyString);
+        bundle.putInt()
+         */
+>>>>>>> Stashed changes:CodeProjet/app/src/main/java/com/example/applicationcalculmental/GameActivity.java
     }
 
     private void ajouterNombre(Integer valeur){
