@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApplicationCalculMental">
         <activity
+            android:name=".aProposActivity"
+            android:exported="false" />
+        <activity
             android:name=".EndActivity"
             android:exported="false" />
         <activity
