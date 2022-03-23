@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/settings_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/appliLang"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <Button
+                android:layout_width="101.8dp"
+                android:layout_height="73.4dp"
+                android:background="@drawable/drap_fr"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:id="@+id/drap_fr"/>
+
+            <Button
+                android:layout_width="101.8dp"
+                android:layout_height="73.4dp"
+                android:background="@drawable/drap_gb"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:textAlignment="center"
+                android:id="@+id/drap_gb"/>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

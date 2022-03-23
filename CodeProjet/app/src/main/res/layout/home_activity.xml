@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#e9ecef">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="20dp">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="102.4dp"
+                        android:layout_height="102.4dp"
+                        android:gravity="center"
+                        android:background="@drawable/settings"
+                        android:id="@+id/settings"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center"/>
+
+                    <Button
+                        android:layout_width="102.4dp"
+                        android:layout_height="102.4dp"
+                        android:gravity="center"
+                        android:background="@drawable/about"
+                        android:id="@+id/about"
+                        android:layout_margin="20dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/play"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/selector_home_btn"
+                    android:id="@+id/newgame"
+                    android:layout_margin="20dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/scores"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/selector_home_btn"
+                    android:id="@+id/scores"
+                    android:layout_margin="20dp"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="@string/developpedBy"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
