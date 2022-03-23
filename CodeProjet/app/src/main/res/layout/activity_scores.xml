@@ -11,6 +11,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/scores_toolbar"
+            android:id="@+id/toolbar"/>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +39,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Classement des 10 meilleurs scores :"
+                    android:text="@string/tenBestScores"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_weight="0.5"
@@ -86,7 +89,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Derniers scores obtenus :"
+                    android:text="@string/lastScores"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_weight="0.5"

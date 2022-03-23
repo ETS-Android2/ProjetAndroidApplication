@@ -4,25 +4,22 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.applicationcalculmental.BDD.Helper;
 import com.example.applicationcalculmental.BDD.Score;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -42,6 +39,7 @@ public class GameActivity extends AppCompatActivity {
     private int compteur = 1;
     private boolean validiteValider = false;
     private Helper BDD = new Helper(GameActivity.this);
+    private ImageView coeur0, coeur1, coeur2;
 
 
     @Override
@@ -63,6 +61,7 @@ public class GameActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.textViewScore);
         textViewNom = findViewById(R.id.textViewNomPartie);
         majTextViewNom();
+        majTextViewScore();
 
         resultat = calcul(chosenDifficulty);
 
@@ -93,24 +92,29 @@ public class GameActivity extends AppCompatActivity {
         boutonMoins.setOnClickListener(view -> nombreNegatif());
         Button boutonValider = findViewById(R.id.buttonValider);
 
+        coeur0 = (ImageView) findViewById(R.id.imageView0);
+        coeur1 = (ImageView) findViewById(R.id.imageView1);
+        coeur2 = (ImageView) findViewById(R.id.imageView2);
+
         boutonValider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (compteur < 5 && nbVies > 0){
+                if (compteur <= chosenNbCalcul){
                     if(!validiteValider){
                         verifCalcul();
-                        boutonValider.setText("Suivant");
+                        compteur++;
                         validiteValider = true;
-                    }else{
+                        boutonValider.setText(compteur < chosenNbCalcul && nbVies > 0 ? getString(R.string.next) : getString(R.string.finish));
+                    }else if(validiteValider && compteur<5 && nbVies > 0){
                         videTextViewResultat();
                         textViewResultat.setTextColor(Color.DKGRAY);
                         resultat = calcul(chosenDifficulty);
-                        compteur++;
-                        boutonValider.setText("Valider");
+                        boutonValider.setText(R.string.validBtn);
                         validiteValider = false;
                     }
-                }else{
-                    switchToEndActivity();
+                    else if(compteur == chosenNbCalcul || nbVies <= 0){
+                        switchToEndActivity();
+                    }
                 }
             }
         });
@@ -129,6 +133,9 @@ public class GameActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.home:
                 openHomeActivity(item);
+                return true;
+            case R.id.settings:
+                openSettingsActivity(item);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -198,7 +205,7 @@ public class GameActivity extends AppCompatActivity {
     private void majTextViewNom() {
         String valeurAAfficher = "";
 
-        valeurAAfficher = "Nom partie : " + chosenGameName;
+        valeurAAfficher = getString(R.string.gameName) + " " +chosenGameName;
 
         textViewNom.setText(valeurAAfficher);
 
@@ -223,7 +230,7 @@ public class GameActivity extends AppCompatActivity {
                 nombre.add(1,(long) random.nextInt(50) + 1);
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + difficulte);
+                throw new IllegalStateException(getString(R.string.unexpectedValue) + difficulte);
         }
         return nombre;
     }
@@ -246,19 +253,19 @@ public class GameActivity extends AppCompatActivity {
         switch (operateur){
             case 1:
                 resultat = nombre.get(0) + nombre.get(1);
-                texte = Elements.get(0) + "+" + Elements.get(1);
+                texte = Elements.get(0) + " + " + Elements.get(1);
                 textViewCalcul.setText(texte);
                 break;
 
             case 2:
                 resultat = nombre.get(0) - nombre.get(1);
-                texte = Elements.get(0) + "-" + Elements.get(1);
+                texte = Elements.get(0) + " - " + Elements.get(1);
                 textViewCalcul.setText(texte);
                 break;
 
             case 3:
                 resultat = nombre.get(0) * nombre.get(1);
-                texte = Elements.get(0) + "x" + Elements.get(1);
+                texte = Elements.get(0) + " x " + Elements.get(1);
                 textViewCalcul.setText(texte);
                 break;
 
@@ -276,7 +283,7 @@ public class GameActivity extends AppCompatActivity {
                 Elements.add(0,Long.toString(nombre.get(0)));
                 Elements.add(1,Long.toString(nombre.get(1)));
                 resultat = nombre.get(0) / nombre.get(1);
-                texte = Elements.get(0) + "/" + Elements.get(1);
+                texte = Elements.get(0) + " / " + Elements.get(1);
                 textViewCalcul.setText(texte);
                 break;
         }
@@ -293,7 +300,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void verifCalcul() {
         String res = Long.toString(resultat);
-        String texte = textViewCalcul.getText() + "=" + res;
+        String texte = textViewCalcul.getText() + " = " + res;
         textViewCalcul.setText(texte);
         if (resultat.equals(Reponse)){
             point++;
@@ -303,6 +310,14 @@ public class GameActivity extends AppCompatActivity {
         else{
             nbVies--;
             textViewResultat.setTextColor(Color.RED);
+
+            if (nbVies == 0) {
+                coeur0.setImageResource(R.drawable.coeur_vide);
+            } else if (nbVies == 1) {
+                coeur1.setImageResource(R.drawable.coeur_vide);
+            } else if (nbVies == 2) {
+                coeur2.setImageResource(R.drawable.coeur_vide);
+            }
         }
     }
 
@@ -315,5 +330,9 @@ public class GameActivity extends AppCompatActivity {
 
     public void openHomeActivity(MenuItem item) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void openSettingsActivity(MenuItem item) {
+        startActivity(new Intent(this, SettingsActivity.class));
     }
 }

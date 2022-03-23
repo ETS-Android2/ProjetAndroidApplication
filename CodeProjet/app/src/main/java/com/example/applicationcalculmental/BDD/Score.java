@@ -1,5 +1,7 @@
 package com.example.applicationcalculmental.BDD;
 
+import com.example.applicationcalculmental.R;
+
 import java.sql.Date;
 
 public class Score {
@@ -24,7 +26,7 @@ public class Score {
                 this.difficulty = "hard";
                 break;
             default:
-                this.difficulty = "undefined";
+                this.difficulty = "undifined";
         }
 
         this.date = new Date(new java.util.Date().getTime());
@@ -36,16 +38,6 @@ public class Score {
         this.difficulty = difficulty;
         this.score = score;
         this.date = date;
-    }
-
-    @Override
-    public String toString() {
-        return "Score{" +
-                "name='" + name + '\'' +
-                ", difficulty='" + difficulty + '\'' +
-                ", score=" + score +
-                ", date=" + date +
-                '}';
     }
 
     public int getId() {

@@ -41,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Nom de la partie :"
+                    android:text="@string/gameName"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -91,7 +91,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Difficulté :"
+                    android:text="@string/difficulty"
                     android:textStyle="bold"
                     android:textSize="24sp"
                     android:gravity="center"/>
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
-                    android:text="Facile"
+                    android:text="@string/easy"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:background="@drawable/selector_difficulty_btn"
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
-                    android:text="Moyen"
+                    android:text="@string/medium"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:background="@drawable/selector_difficulty_btn"
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
-                    android:text="Difficile"
+                    android:text="@string/hard"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:background="@drawable/selector_difficulty_btn"
@@ -159,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nombre de manche pour cette Partie"
+                    android:text="@string/nbPartsGame"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:textAlignment="center"

@@ -109,6 +109,9 @@ public class NewGameActivity extends AppCompatActivity {
                 //Toast.makeText(this, "Home", Toast.LENGTH_LONG).show();
                 openHomeActivity(item);
                 return true;
+            case R.id.settings:
+                openSettingsActivity(item);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -121,14 +124,14 @@ public class NewGameActivity extends AppCompatActivity {
         String chosenGameName = gameName.getText().toString();
 
         if(chosenGameName.length() == 0) {
-            alertDialog.setTitle("Element manquant !");
-            alertDialog.setMessage("Veuillez renseigner un nom de partie.");
+            alertDialog.setTitle(getString(R.string.missingElement));
+            alertDialog.setMessage(getString(R.string.giveGameNamePlease));
             alertDialog.show();
             return "";
         } else {
             if (helper.chosenGameNameIsAlreadyTaken(chosenGameName) == true) {
-                alertDialog.setTitle("Nom de Partie déjà Pris !");
-                alertDialog.setMessage("Veuillez renseigner un nouveau nom de partie.");
+                alertDialog.setTitle(getString(R.string.alreadyTakenGameName));
+                alertDialog.setMessage(getString(R.string.giveNewGameNamePlease));
                 alertDialog.show();
                 return "";
             } else return chosenGameName;
@@ -139,8 +142,8 @@ public class NewGameActivity extends AppCompatActivity {
         AlertDialog alertDialog = new AlertDialog.Builder(NewGameActivity.this).create();
 
         if(chosenDifficulty == 0) {
-            alertDialog.setTitle("Element manquant !");
-            alertDialog.setMessage("Veuillez sélectionner une difficulté.");
+            alertDialog.setTitle(getString(R.string.missingElement));
+            alertDialog.setMessage(getString(R.string.choseDifficultyPlease));
             alertDialog.show();
         }
         return chosenDifficulty;
@@ -161,5 +164,9 @@ public class NewGameActivity extends AppCompatActivity {
 
     public void openHomeActivity(MenuItem item) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void openSettingsActivity(MenuItem item) {
+        startActivity(new Intent(this, SettingsActivity.class));
     }
 }

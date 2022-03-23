@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/calculettre_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/difficulty_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/home_appbar.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/home_btn.xml" value="0.2703125" />
@@ -22,18 +23,26 @@
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/unpressed_difficulty_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/unpressed_home_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/drawable/unpressed_launch_game_btn.xml" value="0.2703125" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/about_toolbar.xml" value="0.16530797101449277" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_about.xml" value="0.264" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_end.xml" value="0.264" />
-        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_game.xml" value="0.21739130434782608" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_game.xml" value="0.264" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_new_game.xml" value="0.264" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_scores.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_settings.xml" value="0.264" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/activity_settings2.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/game_toolbar.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/home_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/item_country.xml" value="0.6" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/new_game_toolbar.xml" value="0.21739130434782608" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/score_format.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/scores_tollbar.xml" value="0.16530797101449277" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/layout/settings_toolbar.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/menu/default_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/menu/game_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/menu/new_game_activity_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/menu/new_game_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/maelr/Documents/ApplicationCalculMental/CodeProjet/app/src/main/res/menu/settings_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
@@ -42,5 +51,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="ApplicationCalculMental.app" />
+      </set>
+    </option>
   </component>
 </project>

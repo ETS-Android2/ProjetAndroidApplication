@@ -17,27 +17,71 @@
         android:orientation="vertical"
         android:layout_marginTop="55dp">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                app:srcCompat="@drawable/coeur_plein" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                app:srcCompat="@drawable/coeur_plein" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                app:srcCompat="@drawable/coeur_plein" />
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
 
             <TextView
                 android:id="@+id/textViewNomPartie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="16sp"
+                android:textStyle="italic"
                 android:gravity="center"
-                android:text="Nom partie : "/>
+                android:text="@string/gameName"/>
 
             <TextView
                 android:id="@+id/textViewScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="16sp"
+                android:textStyle="italic"
                 android:gravity="center"
                 android:text="Score : " />
+
+
         </LinearLayout>
 
         <TextView
@@ -64,8 +108,11 @@
             android:id="@+id/buttonEffacer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:text="Effacer" />
+            android:text="@string/clear"
+            android:background="@drawable/selector_home_btn"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,6 +124,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="1" />
 
             <Button
@@ -85,7 +136,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:text="2" />
+                android:text="2"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_3"
@@ -93,6 +148,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="3" />
         </LinearLayout>
 
@@ -106,6 +165,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="4" />
 
             <Button
@@ -114,6 +177,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="5" />
 
             <Button
@@ -122,6 +189,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="6" />
         </LinearLayout>
 
@@ -135,6 +206,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="7" />
 
             <Button
@@ -143,6 +218,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="8" />
 
             <Button
@@ -151,6 +230,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="9" />
         </LinearLayout>
 
@@ -164,6 +247,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="(-)" />
 
             <Button
@@ -172,6 +259,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
+                android:background="@drawable/calculettre_btn"
+                android:textColor="@color/orange"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:text="0" />
 
             <Button
@@ -179,7 +270,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Valider" />
+                android:background="@drawable/selector_home_btn"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="@string/validBtn" />
 
         </LinearLayout>
     </LinearLayout>

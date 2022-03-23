@@ -2,9 +2,11 @@
 <resources>
     <string name="app_name">ApplicationCalculMental</string>
     <string name="title_activity_new_game">NewGameActivity</string>
+    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="home">Accueil</string>
@@ -17,8 +19,8 @@
     <string name="validBtn">Valider</string>
     <string name="next">Suivant</string>
     <string name="finish">Terminer</string>
-    <string name="gameName">"Nom de partie : "</string>
-    <string name="unexpectedValue">"Unexpected value: "</string>
+    <string name="gameName">Nom de partie : </string>
+    <string name="unexpectedValue">Unexpected value: </string>
     <string name="missingElement">Element manquant !</string>
     <string name="giveGameNamePlease">Veuillez renseigner un nom de partie.</string>
     <string name="alreadyTakenGameName">Nom de Partie déjà Pris !</string>
@@ -38,9 +40,6 @@
     <string name="play">Jouer</string>
     <string name="newGame">Nouvelle Partie</string>
     <string name="settings">Paramètres</string>
-    <string name="about">À propos</string>
-    <string name="disponibilite">L\'application est disponible en Français et en Anglais, changeable dans les paramètres.</string>
-    <string name="fonctionnalite">Les fonctionnalités apportées : Le nombre de vies restantes est affiché via des coeurs au lieu d\'un entier. Toolbar personnalisées selon les pages. Un classement des 10 meilleurs scores est implémenté dans la page Scores. Lors de la création d\'une partie, il y a possiblité de choisir la difficulté et le nombre de manche pour la partie. Ajout d\'une animation de pression et selection pour les boutons d\'actions principales.</string>
 
     <string-array name="nbCalculGame">
         <item>5</item>
@@ -48,4 +47,7 @@
         <item>15</item>
         <item>20</item>
     </string-array>
+    <string name="about">À propos</string>
+    <string name="disponibilite">L\'application est disponible en Français et en Anglais, changeable dans les paramètres.</string>
+    <string name="fonctionnalite">Les fonctionnalités apportées : Le nombre de vies restantes est affiché via des coeurs au lieu d\'un entier. Toolbar personnalisées selon les pages. Un classement des 10 meilleurs scores est implémenté dans la page Scores. Lors de la création d\'une partie, il y a possiblité de choisir la difficulté et le nombre de manche pour la partie. Ajout d\'une animation de pression et selection pour les boutons d\'actions principales.</string>
 </resources>
