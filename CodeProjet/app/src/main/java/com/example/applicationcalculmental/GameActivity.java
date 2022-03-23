@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +24,8 @@ import java.util.concurrent.TimeUnit;
 public class GameActivity extends AppCompatActivity {
 
     private Long Reponse =0L;
-    private Long Point = 0L;
-    private Long nbVies = 3L;
+    private Long point = 0L;
+    private int nbVies = 3;
     private TextView textViewCalcul, textViewResultat, textViewScore, textViewNom;
     private Long BORNE_SUPERIEUR = 9999L;
     private Long BORNE_INFERIEUR = -9999L;
@@ -35,9 +36,9 @@ public class GameActivity extends AppCompatActivity {
     private android.support.v7.widget.Toolbar toolbar;
     private boolean negatif = false;
     private Long resultat;
-    private int compteur = 1;
+    private int compteur = 0;
     private boolean validiteValider = false;
-    private double score;
+    private ImageView coeur0, coeur1, coeur2;
 
 
     @Override
@@ -51,6 +52,10 @@ public class GameActivity extends AppCompatActivity {
             if(intent.hasExtra("chosenDifficulty")) chosenDifficulty = intent.getIntExtra("chosenDifficulty", 1);
             if(intent.hasExtra("chosenNbCalcul")) chosenNbCalcul = intent.getIntExtra("chosenNbCalcul", 5);
         }
+
+        coeur0 = (ImageView) findViewById(R.id.imageView0);
+        coeur1 = (ImageView) findViewById(R.id.imageView1);
+        coeur2 = (ImageView) findViewById(R.id.imageView2);
 
         textViewCalcul = findViewById(R.id.textviewCalcul);
         textViewResultat = findViewById(R.id.textViewResultat);
@@ -90,22 +95,22 @@ public class GameActivity extends AppCompatActivity {
         boutonValider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (compteur < 5 && nbVies > 0){
+                if (compteur <= chosenNbCalcul){
                     if(!validiteValider){
                         verifCalcul();
-                        boutonValider.setText("Suivant");
+                        compteur++;
                         validiteValider = true;
-                    }else{
+                        boutonValider.setText(compteur < chosenNbCalcul && nbVies > 0 ? "Suivant" : "Terminer");
+                    }else if(validiteValider && compteur<5 && nbVies > 0){
                         videTextViewResultat();
                         textViewResultat.setTextColor(Color.DKGRAY);
                         resultat = calcul(chosenDifficulty);
-                        compteur++;
                         boutonValider.setText("Valider");
                         validiteValider = false;
                     }
-                }else{
-                    verifCalcul();
-                    switchToEndActivity();
+                    else if(compteur == chosenNbCalcul || nbVies <= 0){
+                        switchToEndActivity();
+                    }
                 }
             }
         });
@@ -134,7 +139,7 @@ public class GameActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EndActivity.class);
 
         Bundle bundle = new Bundle();
-        bundle.putDouble("score", Point * 100 / chosenNbCalcul);
+        bundle.putDouble("score", point * 100 / chosenNbCalcul);
 
         intent.putExtras(bundle);
 
@@ -199,10 +204,9 @@ public class GameActivity extends AppCompatActivity {
     private void majTextViewScore() {
         String valeurAAfficher = "";
 
-        valeurAAfficher = "Score : " + Point;
+        valeurAAfficher = "Score : " + point;
 
         textViewScore.setText(valeurAAfficher);
-
     }
 
     private void majTextViewNom() {
@@ -224,13 +228,13 @@ public class GameActivity extends AppCompatActivity {
                 break;
 
             case 2:
-                nombre.add(0,(long) random.nextInt(15) + 11);
-                nombre.add(1,(long) random.nextInt(15) + 11);
+                nombre.add(0,(long) random.nextInt(25) + 1);
+                nombre.add(1,(long) random.nextInt(25) + 1);
                 break;
 
             case 3:
-                nombre.add(0,(long) random.nextInt(25) + 26);
-                nombre.add(1,(long) random.nextInt(25) + 26);
+                nombre.add(0,(long) random.nextInt(50) + 1);
+                nombre.add(1,(long) random.nextInt(50) + 1);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + difficulte);
@@ -273,9 +277,16 @@ public class GameActivity extends AppCompatActivity {
                 break;
 
             case 4:
-                while(!divisionException(nombre.get(0), nombre.get(1))){
-                    nombre = genereNombreAlea(difficulte);
+                if (chosenDifficulty == 1){
+                    while(!divisionExceptionFacile(nombre.get(0), nombre.get(1))){
+                        nombre = genereNombreAlea(difficulte);
+                    }
+                }else{
+                    while(!divisionExceptionMoyenDifficile(nombre.get(0), nombre.get(1))){
+                        nombre = genereNombreAlea(difficulte);
+                    }
                 }
+
                 Elements.add(0,Long.toString(nombre.get(0)));
                 Elements.add(1,Long.toString(nombre.get(1)));
                 resultat = nombre.get(0) / nombre.get(1);
@@ -286,8 +297,12 @@ public class GameActivity extends AppCompatActivity {
         return resultat;
     }
 
-    private boolean divisionException(long nombre1, long nombre2){
+    private boolean divisionExceptionFacile(long nombre1, long nombre2){
         return ((nombre1 % nombre2) == 0);
+    }
+
+    private boolean divisionExceptionMoyenDifficile(long nombre1, long nombre2){
+        return ((nombre1 % nombre2) == 0 && (nombre1 / nombre2) != 1);
     }
 
     private void verifCalcul() {
@@ -295,19 +310,27 @@ public class GameActivity extends AppCompatActivity {
         String texte = textViewCalcul.getText() + "=" + res;
         textViewCalcul.setText(texte);
         if (resultat.equals(Reponse)){
-            Point++;
+            point++;
             textViewResultat.setTextColor(Color.GREEN);
             majTextViewScore();
         }
         else{
             nbVies--;
             textViewResultat.setTextColor(Color.RED);
+            switch (nbVies){
+                case 0:
+                    coeur0.setImageResource(R.drawable.coeur_vide);
+
+                case 1:
+                    coeur1.setImageResource(R.drawable.coeur_vide);
+
+                case 2:
+                    coeur2.setImageResource(R.drawable.coeur_vide);
+
+            }
         }
     }
 
-    private void bouclePartie(int limite) {
-
-    }
 
     private boolean videTextViewResultat() {
         textViewResultat.setText("");
