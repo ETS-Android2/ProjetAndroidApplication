@@ -9,7 +9,9 @@ import android.support.annotation.Nullable;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Helper extends SQLiteOpenHelper {
 
@@ -91,5 +93,32 @@ public class Helper extends SQLiteOpenHelper {
                 sqlDate);
 
         return score;
+    }
+
+    public Cursor getTenLastScore() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM scores ORDER BY _id DESC LIMIT 10", null);
+        return cursor;
+    }
+
+    public Cursor getTenBestScore() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM scores ORDER BY score DESC LIMIT 10", null);
+        return cursor;
+    }
+
+    public boolean chosenGameNameIsAlreadyTaken(String chosenGameName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        try {
+            Cursor cursor = db.query("scores", new String[]{"_id", "name", "difficulty", "score", "date"},
+                    "name=?", new String[]{String.valueOf(chosenGameName)}, null, null, null);
+
+            return (cursor.getCount() != 0) ? true : false;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

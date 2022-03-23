@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,7 +47,9 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game);
+
         Intent intent = getIntent();
 
         if(intent != null) {
@@ -63,7 +66,7 @@ public class GameActivity extends AppCompatActivity {
 
         resultat = calcul(chosenDifficulty);
 
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbarGame);
         setSupportActionBar(toolbar);
 
         Button bouton1 = findViewById(R.id.button_1);
@@ -96,17 +99,17 @@ public class GameActivity extends AppCompatActivity {
                 if (compteur < 5 && nbVies > 0){
                     if(!validiteValider){
                         verifCalcul();
+                        boutonValider.setText("Suivant");
                         validiteValider = true;
                     }else{
                         videTextViewResultat();
                         textViewResultat.setTextColor(Color.DKGRAY);
                         resultat = calcul(chosenDifficulty);
                         compteur++;
+                        boutonValider.setText("Valider");
                         validiteValider = false;
                     }
                 }else{
-                    verifCalcul();
-                    Double score = (double) (point / chosenNbCalcul) * 100;
                     switchToEndActivity();
                 }
             }
@@ -117,7 +120,7 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.game_menu, menu);
+        getMenuInflater().inflate(R.menu.default_menu, menu);
         return true;
     }
 
@@ -201,20 +204,9 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    public int Int_A_Different_B(int B, int borneX, int borneY) {
-        Random rA = new Random();
-        int A;
-        do {
-            A = rA.nextInt(borneX) + borneY;
-        }while (A == B);
-
-        return A;
-    }
-
     private List<Long> genereNombreAlea(int difficulte){
         List<Long> nombre = new ArrayList<Long>();
         Random random = new Random();
-        int entier;
         switch (difficulte){
             case 1:
                 nombre.add(0,(long) random.nextInt(10) + 1);
@@ -222,15 +214,13 @@ public class GameActivity extends AppCompatActivity {
                 break;
 
             case 2:
-                entier = random.nextInt(15) + 11;
-                nombre.add(0, (long) entier);
-                nombre.add(1, (long) Int_A_Different_B(entier, 15, 11));
+                nombre.add(0,(long) random.nextInt(25) + 1);
+                nombre.add(1,(long) random.nextInt(25) + 1);
                 break;
 
             case 3:
-                entier = random.nextInt(25) + 50;
-                nombre.add(0,(long) entier);
-                nombre.add(1,(long) Int_A_Different_B(entier, 25, 50));
+                nombre.add(0,(long) random.nextInt(50) + 1);
+                nombre.add(1,(long) random.nextInt(50) + 1);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + difficulte);
@@ -273,9 +263,16 @@ public class GameActivity extends AppCompatActivity {
                 break;
 
             case 4:
-                while(!divisionException(nombre.get(0), nombre.get(1))){
-                    nombre = genereNombreAlea(difficulte);
+                if (chosenDifficulty == 1){
+                    while(!divisionExceptionFacile(nombre.get(0), nombre.get(1))){
+                        nombre = genereNombreAlea(difficulte);
+                    }
+                }else{
+                    while(!divisionExceptionMoyenDifficile(nombre.get(0), nombre.get(1))){
+                        nombre = genereNombreAlea(difficulte);
+                    }
                 }
+
                 Elements.add(0,Long.toString(nombre.get(0)));
                 Elements.add(1,Long.toString(nombre.get(1)));
                 resultat = nombre.get(0) / nombre.get(1);
@@ -286,8 +283,12 @@ public class GameActivity extends AppCompatActivity {
         return resultat;
     }
 
-    private boolean divisionException(long nombre1, long nombre2){
+    private boolean divisionExceptionFacile(long nombre1, long nombre2){
         return ((nombre1 % nombre2) == 0);
+    }
+
+    private boolean divisionExceptionMoyenDifficile(long nombre1, long nombre2){
+        return ((nombre1 % nombre2) == 0 && (nombre1 / nombre2) != 1);
     }
 
     private void verifCalcul() {

@@ -8,8 +8,7 @@
     tools:context=".GameActivity">
 
     <include layout="@layout/game_toolbar"
-        android:id="@+id/toolbarGame"
-        app:title="Partie"/>
+        android:id="@+id/toolbarGame"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -49,7 +48,7 @@
             android:gravity="center"
             android:text="2x3"
             android:textAlignment="center"
-            android:textSize="80sp" />
+            android:textSize="72sp" />
 
         <TextView
             android:id="@+id/textViewResultat"

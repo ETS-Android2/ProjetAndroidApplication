@@ -15,7 +15,7 @@
     <string name="newgame">Nouvelle Partie</string>
     <string name="message_valeur_trop_grande">valeur trop grande</string>
     <string name="message_valeur_trop_petite">valeur trop petite</string>
-    
+
     <string-array name="nbCalculGame">
         <item>5</item>
         <item>10</item>

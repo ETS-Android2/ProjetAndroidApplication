@@ -1,28 +1,19 @@
 package com.example.applicationcalculmental;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AlertDialogLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import com.example.applicationcalculmental.BDD.Helper;
 
 public class NewGameActivity extends AppCompatActivity {
 
@@ -34,6 +25,8 @@ public class NewGameActivity extends AppCompatActivity {
     private int chosenDifficulty = 0;
     private String chosenGameName;
     private int chosenNbCalcul = 0;
+
+    private Helper helper = new Helper(NewGameActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +98,7 @@ public class NewGameActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.new_game_menu, menu);
+        getMenuInflater().inflate(R.menu.default_menu, menu);
         return true;
     }
 
@@ -132,7 +125,14 @@ public class NewGameActivity extends AppCompatActivity {
             alertDialog.setMessage("Veuillez renseigner un nom de partie.");
             alertDialog.show();
             return "";
-        } else return chosenGameName;
+        } else {
+            if (helper.chosenGameNameIsAlreadyTaken(chosenGameName) == true) {
+                alertDialog.setTitle("Nom de Partie déjà Pris !");
+                alertDialog.setMessage("Veuillez renseigner un nouveau nom de partie.");
+                alertDialog.show();
+                return "";
+            } else return chosenGameName;
+        }
     }
 
     public int verificationChosenDifficulty(int chosenDifficulty) {
