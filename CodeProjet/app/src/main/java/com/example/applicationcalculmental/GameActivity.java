@@ -305,10 +305,6 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    private void bouclePartie(int limite) {
-
-    }
-
     private boolean videTextViewResultat() {
         textViewResultat.setText("");
         Reponse = 0L;
