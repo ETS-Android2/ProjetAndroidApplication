@@ -104,8 +104,8 @@ public class GameActivity extends AppCompatActivity {
                         verifCalcul();
                         compteur++;
                         validiteValider = true;
-                        boutonValider.setText(compteur < chosenNbCalcul && nbVies > 0 ? getString(R.string.next) : getString(R.string.finish));
-                    }else if(validiteValider && compteur<5 && nbVies > 0){
+                        boutonValider.setText((compteur < chosenNbCalcul && nbVies > 0) ? getString(R.string.next) : getString(R.string.finish));
+                    }else if(validiteValider && compteur < chosenNbCalcul && nbVies > 0){
                         videTextViewResultat();
                         textViewResultat.setTextColor(Color.DKGRAY);
                         resultat = calcul(chosenDifficulty);
