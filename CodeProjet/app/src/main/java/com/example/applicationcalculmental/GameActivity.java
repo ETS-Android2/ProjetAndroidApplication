@@ -36,7 +36,7 @@ public class GameActivity extends AppCompatActivity {
     private android.support.v7.widget.Toolbar toolbar;
     private boolean negatif = false;
     private Long resultat;
-    private int compteur = 1;
+    private int compteur = 0;
     private boolean validiteValider = false;
     private Helper BDD = new Helper(GameActivity.this);
     private ImageView coeur0, coeur1, coeur2;
@@ -102,8 +102,8 @@ public class GameActivity extends AppCompatActivity {
                 if (compteur <= chosenNbCalcul){
                     if(!validiteValider){
                         verifCalcul();
-                        compteur++;
                         validiteValider = true;
+                        compteur++;
                         boutonValider.setText((compteur < chosenNbCalcul && nbVies > 0) ? getString(R.string.next) : getString(R.string.finish));
                     }else if(validiteValider && compteur < chosenNbCalcul && nbVies > 0){
                         videTextViewResultat();
