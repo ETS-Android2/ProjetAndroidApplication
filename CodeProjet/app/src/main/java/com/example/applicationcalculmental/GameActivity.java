@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public class GameActivity extends AppCompatActivity {
 
     private Long Reponse =0L;
-    private Long Point = 0L;
+    private Long point = 0L;
     private Long nbVies = 3L;
     private TextView textViewCalcul, textViewResultat, textViewScore, textViewNom;
     private Long BORNE_SUPERIEUR = 9999L;
@@ -106,7 +106,7 @@ public class GameActivity extends AppCompatActivity {
                     }
                 }else{
                     verifCalcul();
-                    Double score = (double) (Point / chosenNbCalcul) * 100;
+                    Double score = (double) (point / chosenNbCalcul) * 100;
                     switchToEndActivity();
                 }
             }
@@ -137,7 +137,7 @@ public class GameActivity extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
 
-        double score = resultat * 100 / chosenNbCalcul;
+        double score = Double.valueOf(point * 100 )/ Double.valueOf(chosenNbCalcul);
 
         bundle.putDouble("score", score);
 
@@ -186,7 +186,7 @@ public class GameActivity extends AppCompatActivity {
     private void majTextViewScore() {
         String valeurAAfficher = "";
 
-        valeurAAfficher = "Score : " + Point;
+        valeurAAfficher = "Score : " + point;
 
         textViewScore.setText(valeurAAfficher);
 
@@ -201,9 +201,20 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    public int Int_A_Different_B(int B, int borneX, int borneY) {
+        Random rA = new Random();
+        int A;
+        do {
+            A = rA.nextInt(borneX) + borneY;
+        }while (A == B);
+
+        return A;
+    }
+
     private List<Long> genereNombreAlea(int difficulte){
         List<Long> nombre = new ArrayList<Long>();
         Random random = new Random();
+        int entier;
         switch (difficulte){
             case 1:
                 nombre.add(0,(long) random.nextInt(10) + 1);
@@ -211,13 +222,15 @@ public class GameActivity extends AppCompatActivity {
                 break;
 
             case 2:
-                nombre.add(0,(long) random.nextInt(15) + 11);
-                nombre.add(1,(long) random.nextInt(15) + 11);
+                entier = random.nextInt(15) + 11;
+                nombre.add(0, (long) entier);
+                nombre.add(1, (long) Int_A_Different_B(entier, 15, 11));
                 break;
 
             case 3:
-                nombre.add(0,(long) random.nextInt(25) + 26);
-                nombre.add(1,(long) random.nextInt(25) + 26);
+                entier = random.nextInt(25) + 50;
+                nombre.add(0,(long) entier);
+                nombre.add(1,(long) Int_A_Different_B(entier, 25, 50));
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + difficulte);
@@ -282,7 +295,7 @@ public class GameActivity extends AppCompatActivity {
         String texte = textViewCalcul.getText() + "=" + res;
         textViewCalcul.setText(texte);
         if (resultat.equals(Reponse)){
-            Point++;
+            point++;
             textViewResultat.setTextColor(Color.GREEN);
             majTextViewScore();
         }
