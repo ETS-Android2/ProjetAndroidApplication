@@ -62,6 +62,7 @@ public class GameActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.textViewScore);
         textViewNom = findViewById(R.id.textViewNomPartie);
         majTextViewNom();
+        majTextViewScore();
 
         resultat = calcul(chosenDifficulty);
 
